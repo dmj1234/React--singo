@@ -1,9 +1,9 @@
 import React from 'react';
+import Nav from './components/Nav';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
     Redirect
 } from "react-router-dom";
 import styled from 'styled-components';
@@ -16,17 +16,7 @@ const Main = styled.div`
   flex-grow: 1;
   overflow: auto;
 `;
-const Nav = styled.nav`
-border: 1px solid blue;
-  >ul{
-    display: flex;
-    >li{
-      width: 33.33%;
-      text-align: center;
-      padding: 16px;
-    }
-  }
-`;
+
  function App() {
     return (
         <Router>
@@ -48,21 +38,7 @@ border: 1px solid blue;
                     </Route>
                 </Switch>
                 </Main>
-                <Nav>
-                    <ul>
-                        <li>
-                            <Link to="/tags">标签页</Link>
-                        </li>
-                        <li>
-                            <Link to="/singo">记账页</Link>
-                        </li>
-                        <li>
-                            <Link to="/statistics">统计页</Link>
-                        </li>
-                    </ul>
-                </Nav>
-
-
+                <Nav/>
             </Wrapper>
         </Router>
     );
