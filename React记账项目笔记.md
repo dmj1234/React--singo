@@ -8,4 +8,10 @@
 - 完成
 
 #### 技术点二：
-- 组件化
+- 使用@import-normalize;引入normalize.css
+- 使用dart-sass编译SCSS文件至CSS
+- 直接 import "xxx" 以引用src/xxx
+- 将变量和函数放入src/helper.scss
+- 使用styled-components 这种CSS-in-JS 方案
+- 在编辑器里安装插件以流畅书写CSS
+- TS方面：配置tsconfig.json 后使用import'xxx' 以引用src/xxx
