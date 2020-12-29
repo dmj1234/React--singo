@@ -1,14 +1,15 @@
 import React from 'react';
-import Nav from './components/Nav';
+import Tags from './views/tags';
+import Singo from './views/Singo';
+import Statistics from './views/Statistics';
+import NoMatch from './views/NoMatch';
+
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Redirect
 } from "react-router-dom";
-import styled from 'styled-components';
-import Layout from './components/Layout';
-
 
  function App() {
     return (
@@ -29,34 +30,6 @@ import Layout from './components/Layout';
                     </Route>
                 </Switch>
         </Router>
-    );
-}
-function NoMatch(){
- return (
-     <div>页面不存在，请输入正确网址</div>
- )
-}
-function Statistics() {
-    return (
-        <Layout>
-            <h2>统计页面</h2>
-        </Layout>
-    );
-}
-
-function Tags() {
-    return (
-       <Layout>
-           <h2>标签页面</h2>
-       </Layout>
-    );
-}
-
-function Singo() {
-    return (
-        <Layout>
-            <h2>记账页面</h2>
-        </Layout>
     );
 }
 
