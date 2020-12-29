@@ -6,3 +6,6 @@
 - 我就发现npm6.9支持一个新功能，叫做package alias
 - npm install node-sass@npm:dart-sass  偷偷地换掉
 - 完成
+
+#### 技术点二：
+- 组件化
