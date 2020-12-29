@@ -15,3 +15,7 @@
 - 使用styled-components 这种CSS-in-JS 方案
 - 在编辑器里安装插件以流畅书写CSS
 - TS方面：配置tsconfig.json 后使用import'xxx' 以引用src/xxx
+
+#### 技术点三：
+- 在引入svg图片时，需要require导入，使用import导入需要打印出来，这样很麻烦（每次引入图片，否需要打印）
+- TreeShanking 不适用于require  所以就不会隐藏
