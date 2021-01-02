@@ -3,7 +3,7 @@ import Tags from './views/tags';
 import Singo from './views/Singo';
 import Statistics from './views/Statistics';
 import NoMatch from './views/NoMatch';
-
+import styled from 'styled-components';
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,8 +11,14 @@ import {
     Redirect
 } from "react-router-dom";
 
+
+const AppWrapper = styled.div`
+    color:#333;
+`;
+
  function App() {
     return (
+        <AppWrapper>
         <Router>
                 <Switch>
                     <Route path="/tags">
@@ -30,6 +36,7 @@ import {
                     </Route>
                 </Switch>
         </Router>
+        </AppWrapper>
     );
 }
 

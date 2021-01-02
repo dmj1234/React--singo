@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import {Link,NavLink} from 'react-router-dom';
 import React from 'react';
 import Icon from './icon';
 
@@ -21,6 +21,12 @@ box-shadow:  0 0 3px rgba(0,0,0,0.25);
           width: 24px;
           height: 24px;
       }
+        &.selected {
+          color:#FF5000;
+          .icon{
+            fill:#FF5000;
+          }
+        }
       }
     }
   }
@@ -31,21 +37,21 @@ const Nav = () =>{
             <ul>
                 <li>
 
-                    <Link to="/tags">
+                    <NavLink to="/tags" activeClassName="selected">
                         <Icon name="label"/>
-                        标签页</Link>
+                        标签页</NavLink>
                 </li>
                 <li>
 
-                    <Link to="/singo">
+                    <NavLink to="/singo" activeClassName="selected">
                         <Icon name="singo"/>
-                        记账页</Link>
+                        记账页</NavLink>
                 </li>
                 <li>
 
-                    <Link to="/statistics">
+                    <NavLink to="/statistics" activeClassName="selected">
                         <Icon name="statistics"/>
-                        统计页</Link>
+                        统计页</NavLink>
                 </li>
             </ul>
         </NavWrapper>
