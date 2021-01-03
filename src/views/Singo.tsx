@@ -2,7 +2,7 @@ import Layout from '../components/Layout';
 import React from 'react';
 import styled from 'styled-components';
 import {TagsSection} from './Singo/TagsSection';
-import {NotesSection} from './Singo/NotesSection';
+import {NoteSection} from './Singo/NotesSection';
 import {CategorySection} from './Singo/CategorySection';
 import {NumberPadSection} from './Singo/NumberPadSection';
 
@@ -18,16 +18,8 @@ const MyLayout = styled(Layout)`
 function Singo() {
     return (
         <MyLayout>
-            <TagsSection>
-
-
-            </TagsSection>
-            <NotesSection>
-               <label>
-                   <span > 备注</span>
-                   <input type="text" placeholder="在这里输入备注"/>
-               </label>
-            </NotesSection>
+            <TagsSection/>
+            <NoteSection/>
             <CategorySection>
                 <ul>
                     <li>支出</li>
