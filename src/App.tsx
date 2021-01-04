@@ -10,6 +10,7 @@ import {
     Route,
     Redirect
 } from "react-router-dom";
+import {Tag} from './views/Tag';
 
 
 const AppWrapper = styled.div`
@@ -21,13 +22,16 @@ const AppWrapper = styled.div`
         <AppWrapper>
         <Router>
                 <Switch>
-                    <Route path="/tags">
+                    <Route path="/tags" exact={true}>
                         <Tags />
                     </Route>
-                    <Route path="/singo">
+                    <Route path="/tags/:tag" exact={true}>
+                        <Tag/>
+                    </Route>
+                    <Route path="/singo" exact={true}>
                         <Singo />
                     </Route>
-                    <Route path="/statistics">
+                    <Route path="/statistics" exact={true}>
                         <Statistics />
                     </Route>
                     <Redirect exact from="/" to="/singo" />
