@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTags} from './Singo/useTags';
-import {useParams} from 'react-router-dom'
+import {useParams,useHistory} from 'react-router-dom'
 import Layout from 'components/Layout';
 import Icon from 'components/icon';
 import {Button} from 'components/Button';
@@ -47,11 +47,15 @@ const Tag:React.FC = () => {
                 </Button>
             </Center>
         </div>
-    )
+    );
+    const history = useHistory()
+    const onClickBack =() =>{
+     history.goBack()
+    }
         return (
             <Layout>
                 <Topbar>
-                    <Icon name="left"/>
+                    <Icon name="left" onClick={onClickBack}/>
                     <span>编辑标签</span>
                 </Topbar>
                 {tag ?  tagContent(tag) :<Center>
