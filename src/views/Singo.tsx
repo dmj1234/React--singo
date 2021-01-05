@@ -28,10 +28,12 @@ function Singo() {
         })
     }
     const  submit = () => {
-        addRecord(selected);
-        alert('保存成功')
-        setSelected(defaultFormData);
+        if (addRecord(selected)) {
+            alert('保存成功')
+            setSelected(defaultFormData);
+        }
     };
+
     return (
         <MyLayout>
             <TagsSection value ={selected.tagIds}
@@ -43,7 +45,7 @@ function Singo() {
             onChange={category => onChange({category})}
             />
             <NumberPadSection value={selected.amount}
-            onChange={amount => onChange({amount})} onOk={()=>{}}
+            onChange={amount => onChange({amount})} onOk={submit}
             />
         </MyLayout>
     );
