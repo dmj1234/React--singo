@@ -2,6 +2,7 @@
 @import "helper.scss";
 *{
   margin: 0; padding: 0;
+  border: none;
 }
 *{box-sizing: border-box}
 *::before{box-sizing: border-box}
@@ -20,8 +21,8 @@ body{
   width: 1em;
   height: 1em;
 }
-button{
-  font-family: inherit;
+button,input{
+  font: inherit;
 }
 :focus{
   outline: none;

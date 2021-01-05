@@ -9,7 +9,7 @@ import {Center} from '../components/Center';
 import {Space} from '../components/Space';
 
 const  TagList = styled.ol`
-font-size: 16px;
+  font-size: 16px;
   background: white;
   >li{
     border-bottom: 1px solid #d5d5d0;
@@ -23,8 +23,6 @@ font-size: 16px;
     }
   }
 `
-
-
 
 function Tags() {
     const {tags} = useTags()

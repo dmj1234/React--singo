@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Label =styled.label`
-          >label{
             display: flex;
             align-items: center;
             >span{
@@ -16,7 +15,7 @@ const Label =styled.label`
               background: none;
               border: none;
             }
-          }
+          
     `
 type Props = {
     label:string;
