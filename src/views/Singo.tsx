@@ -5,27 +5,33 @@ import {TagsSection} from './Singo/TagsSection';
 import {NoteSection} from './Singo/NotesSection';
 import {CategorySection} from './Singo/CategorySection';
 import {NumberPadSection} from './Singo/NumberPadSection';
+import {useRecords} from '../hooks/useRecords';
 
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
 `
 type Category = '-'| '+'
-
+const defaultFormData ={
+    tagIds:[] as number[],
+    note:'',
+    category:'-' as Category,
+    amount: 0
+}
 function Singo() {
-    const [selected,setSelected] = useState({
-        tagIds:[] as number[],
-        note:'',
-        category:'-' as Category,
-        amount: 0
-    })
-
+    const [selected,setSelected] = useState(defaultFormData)
+    const {records,addRecord} = useRecords();
     const onChange = (obj:Partial<typeof  selected>) => {
         setSelected({
             ...selected,
             ...obj
         })
     }
+    const  submit = () => {
+        addRecord(selected);
+        alert('保存成功')
+        setSelected(defaultFormData);
+    };
     return (
         <MyLayout>
             <TagsSection value ={selected.tagIds}
