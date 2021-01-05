@@ -25,6 +25,8 @@ function Statistics() {
     const  [category,setCategory] = useState<'-'|'+'>('-');
     const  {records} =useRecords();
     const {getName} = useTags()
+
+
     return (
         <Layout>
             <CategoryWrapper>
