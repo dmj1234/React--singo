@@ -20,7 +20,7 @@ const defaultFormData ={
 }
 function Singo() {
     const [selected,setSelected] = useState(defaultFormData)
-    const {records,addRecord} = useRecords();
+    const {addRecord} = useRecords();
     const onChange = (obj:Partial<typeof  selected>) => {
         setSelected({
             ...selected,
@@ -32,7 +32,7 @@ function Singo() {
             alert('保存成功')
             setSelected(defaultFormData);
         }
-    };
+    }
 
     return (
         <MyLayout>
