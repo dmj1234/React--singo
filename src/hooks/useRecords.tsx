@@ -6,7 +6,9 @@ type RecordItem = {
     note:string
     category:'+' |'-'
     amount:number
+
 }
+
 type newRecordItem = Omit<RecordItem, 'createdAt'>
   const  useRecords =() =>{
     const  [records,setRecords] = useState<RecordItem[]>([]);
@@ -21,7 +23,7 @@ type newRecordItem = Omit<RecordItem, 'createdAt'>
               alert('请输入金额');
               return false;
           }
-          if(newRecord.tagIds.length==0) {
+          if(newRecord.tagIds.length===0) {
               alert('请选择标签名')
               return false
 

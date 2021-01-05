@@ -18,6 +18,9 @@ const defaultFormData ={
     category:'-' as Category,
     amount: 0
 }
+const CategoryWrapper = styled.div`
+background: #c4c4c4;
+`
 function Singo() {
     const [selected,setSelected] = useState(defaultFormData)
     const {addRecord} = useRecords();
@@ -41,9 +44,11 @@ function Singo() {
             <NoteSection value = {selected.note}
             onChange={note =>onChange({note})}
             />
-            <CategorySection value={selected.category}
-            onChange={category => onChange({category})}
-            />
+           <CategoryWrapper>
+               <CategorySection value={selected.category}
+                                onChange={category => onChange({category})}
+               />
+           </CategoryWrapper>
             <NumberPadSection value={selected.amount}
             onChange={amount => onChange({amount})} onOk={submit}
             />
