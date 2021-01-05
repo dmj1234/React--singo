@@ -1,12 +1,11 @@
-import Layout from '../components/Layout';
+import Layout from 'components/Layout';
 import React from 'react';
 import {useTags} from './Singo/useTags';
 import styled from 'styled-components';
-import Icon from '../components/icon';
+import Icon from 'components/icon';
 import { Link } from 'react-router-dom';
-const Button = styled.button`
-font-size: 18px;border: none; padding: 8px 12px;
-`
+import {Button} from 'components/Button';
+
 const  TagList = styled.ol`
 font-size: 16px;
   background: white;
