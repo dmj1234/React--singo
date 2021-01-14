@@ -1,46 +1,24 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+技术点一：
+我想让React应用支出sass
+需要node-sass，但是他有两个缺点：下载速度慢，本地编译慢
+于是我想用dart-sass代替node-sass
+但是React只支持node-sass不支持dart-sass
+我就发现npm6.9支持一个新功能，叫做package alias
+npm install node-sass@npm:dart-sass 偷偷地换掉
+完成
+技术点二：
+使用@import-normalize;引入normalize.css
+使用dart-sass编译SCSS文件至CSS
+直接 import "xxx" 以引用src/xxx
+将变量和函数放入src/helper.scss
+使用styled-components 这种CSS-in-JS 方案
+在编辑器里安装插件以流畅书写CSS
+TS方面：配置tsconfig.json 后使用import'xxx' 以引用src/xxx
+技术点三：
+在引入svg图片时，需要require导入，使用import导入需要打印出来，这样很麻烦（每次引入图片，否需要打印）
+TreeShanking 不适用于require 所以就不会隐藏
+技术点四：
+自定义webpack config
+首先yarn eject 拿到webpack配置，注意git commit 一下 ，否则失败
+然后根据svg-sprite-loader的文档进行CRM学习
+git commit
